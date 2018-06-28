@@ -13,6 +13,7 @@ syntax enable
 set number
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 " ===========================================================================
@@ -62,6 +63,9 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" Toggle maximize pane
+nnoremap <Leader>w :MaximizerToggle<CR>
+
 " autopairs
 ino " ""<left>
 ino ' ''<left>
@@ -75,6 +79,17 @@ vnoremap '' "sc'<C-r>s'<Esc>
 vnoremap `` "sc`<C-r>s`<Esc>
 " ===========================================================================
 
+" vim-javascript
+" ===========================================================================
+let g:javascript_plugin_jsdoc = 1
+" ===========================================================================
+
+" vim-fzf
+set rtp+=~/.fzf
+
+" Airline theme
+let g:airline_theme="murmur"
+
 " gvim
 " ===========================================================================
 if has("gui_running")
@@ -83,16 +98,8 @@ if has("gui_running")
     set guioptions-=r "remove right-hand scroll bar
     set guioptions-=L "remove left-hand scroll bar. Fix for TagBar.
 	set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline\ 10.5
-    set linespace=1
+    set linespace=2
     set ambiwidth=double
     set guitablabel=%t
 endif
 " ===========================================================================
-
-" vim-javascript
-" ===========================================================================
-let g:javascript_plugin_jsdoc = 1
-" ===========================================================================
-
-" vim-fzf
-set rtp+=~/.fzf
