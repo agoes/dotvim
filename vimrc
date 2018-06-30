@@ -39,7 +39,7 @@ nmap <Leader>j :split<CR>
 nmap <Leader>x :close<CR>
 
 " open nerdtree using ctrl+b
-nmap <C-b> :NERDTreeToggle<cr>
+nmap <C-b> :NERDTreeToggle<CR>
 
 " quick escape by entering jj in insert mode
 ino jj <esc>
@@ -77,6 +77,9 @@ vnoremap (( "sc(<C-r>s)<Esc>
 vnoremap "" "sc"<C-r>s"<Esc>
 vnoremap '' "sc'<C-r>s'<Esc>
 vnoremap `` "sc`<C-r>s`<Esc>
+
+" Ack.vim
+nmap <leader>f :Ack 
 " ===========================================================================
 
 " vim-javascript
@@ -89,6 +92,11 @@ set rtp+=~/.fzf
 
 " Airline theme
 let g:airline_theme="murmur"
+
+" Use ag for ack.vim 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " gvim
 " ===========================================================================
