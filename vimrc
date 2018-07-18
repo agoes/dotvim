@@ -1,7 +1,7 @@
 " Common configuration
 " ===========================================================================
 set encoding=UTF-8
-set smartindent autoindent noexpandtab tabstop=4 shiftwidth=4
+set smartindent autoindent expandtab tabstop=4 shiftwidth=4
 set laststatus=2
 set t_Co=256                                                                
 set noswapfile
@@ -24,32 +24,32 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 let mapleader="\<SPACE>"
 
 " quick move between pane
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+nmap <c-h> <c-w>h
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
 
 " quick vsplit
-nmap <Leader>l :vsplit<CR>
+nmap <leader>l :vsplit<cr>
 
 " quick split
-nmap <Leader>j :split<CR>
+nmap <leader>j :split<cr>
 
 " quick close buffer
-nmap <Leader>x :close<CR>
+nmap <leader>x :close<cr>
 
 " open nerdtree using ctrl+b
-nmap <C-b> :NERDTreeToggle<CR>
+nmap <c-b> :NERDTreeToggle<cr>
 
 " quick escape by entering jj in insert mode
 ino jj <esc>
 cno jj <c-c>
 
 " Jump to file
-nnoremap <Leader>o :FZF<CR>
+nnoremap <leader>o :FZF<cr>
 
 " Jump to tag in all files / buffers
-nnoremap <Leader>t :Tags<CR>
+nnoremap <leader>t :Tags<cr>
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
@@ -64,7 +64,7 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 " Toggle maximize pane
-nnoremap <Leader>w :MaximizerToggle<CR>
+nnoremap <leader>w :MaximizerToggle<cr>
 
 " autopairs
 ino " ""<left>
@@ -72,14 +72,16 @@ ino ' ''<left>
 ino ( ()<left>
 ino [ []<left>
 ino { {}<left>
-ino {<CR> {<CR>}<ESC>O
-vnoremap (( "sc(<C-r>s)<Esc>
-vnoremap "" "sc"<C-r>s"<Esc>
-vnoremap '' "sc'<C-r>s'<Esc>
-vnoremap `` "sc`<C-r>s`<Esc>
+ino {<cr> {<cr>}<esc>O
+vnoremap (( "sc(<c-r>s)<esc>
+vnoremap "" "sc"<c-r>s"<esc>
+vnoremap '' "sc'<c-r>s'<esc>
+vnoremap `` "sc`<c-r>s`<esc>
 
 " Ack.vim
 nmap <leader>f :Ack 
+nmap <leader>fc :Ack <cword><cr>
+vnoremap <leader>fw y:Ack <c-r>=fnameescape(@")<cr><cr>
 " ===========================================================================
 
 " vim-javascript
@@ -98,16 +100,20 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" gvim
+" Ale
+let g:ale_fixers = {'javascript': ['eslint']}
+
+" gvim / macvim
 " ===========================================================================
 if has("gui_running")
-    set guioptions-=m  "remove menu bar
-    set guioptions-=T "remove toolbar
-    set guioptions-=r "remove right-hand scroll bar
-    set guioptions-=L "remove left-hand scroll bar. Fix for TagBar.
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
 	set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline\ 10.5
     set linespace=2
     set ambiwidth=double
     set guitablabel=%t
+    set guicursor+=a:blinkon0
 endif
 " ===========================================================================
