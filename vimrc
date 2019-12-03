@@ -5,10 +5,9 @@ set smartindent autoindent expandtab tabstop=4 shiftwidth=4
 set laststatus=2
 set t_Co=256                                                                
 set noswapfile
-set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
 set background=dark
+colorscheme gruvbox
+let g:gruvbox_termcolors=16
 syntax enable
 set number
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
@@ -16,6 +15,13 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+" ===========================================================================
+
+" Fix scrolling lags
+" ===========================================================================
+set regexpengine=1
+set noshowcmd
+set synmaxcol=200
 " ===========================================================================
 
 " Keybindings

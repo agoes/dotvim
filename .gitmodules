@@ -1,9 +1,6 @@
 [submodule "pack/plugins/start/nerdtree"]
 	path = pack/plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "pack/plugins/start/ayu-vim"]
-	path = pack/plugins/start/ayu-vim
-	url = https://github.com/ayu-theme/ayu-vim.git
 [submodule "pack/plugins/start/vim-airline"]
 	path = pack/plugins/start/vim-airline
 	url = https://github.com/bling/vim-airline
@@ -13,9 +10,6 @@
 [submodule "pack/plugins/start/vim-javascript"]
 	path = pack/plugins/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
-[submodule "pack/plugins/start/vim-devicons"]
-	path = pack/plugins/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
 [submodule "pack/plugins/start/supertab"]
 	path = pack/plugins/start/supertab
 	url = https://github.com/ervandew/supertab
@@ -34,3 +28,9 @@
 [submodule "pack/plugins/start/ale"]
 	path = pack/plugins/start/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "pack/plugins/start/gruvbox"]
+	path = pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "pack/default/start/gruvbox"]
+	path = pack/default/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
